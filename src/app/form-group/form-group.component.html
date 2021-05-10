@@ -2,15 +2,24 @@
   <label> First Name</label>
   <input formControlName="firstname"
          type="text"/>
+  <br>
   <label> Last Name</label>
   <input formControlName="lastname"
          type="text"/>
+  <br>
   <label> Email</label>
   <input formControlName="email"
          type="text"/>
 </form>
 
-
 <form [formGroup]="ourform" (ngSubmit)="addClient()">
   <button type="submit">Add</button>
 </form>
+
+
+<ul>
+  <li *ngIf="ourform.controls['firstName']?.errors?.required">First name is required please</li>
+  <li *ngIf="ourform.controls['lastName']?.errors?.required">Last name is required please</li>
+  <li *ngIf="ourform.controls['email']?.errors?.required">Email is required please</li>
+  <li *ngIf="ourform.controls['email']?.errors?.email">Email is not correct</li>
+</ul>

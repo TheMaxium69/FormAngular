@@ -26,5 +26,4 @@ export class FormGroupComponent implements OnInit {
     /this.clientService.addClient(c);*/
     this.ourform.reset();
   }
-
 }
