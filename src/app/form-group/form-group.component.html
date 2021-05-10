@@ -1,1 +1,16 @@
-<p>form-group works!</p>
+<form [formGroup]="ourform">
+  <label> First Name</label>
+  <input formControlName="firstname"
+         type="text"/>
+  <label> Last Name</label>
+  <input formControlName="lastname"
+         type="text"/>
+  <label> Email</label>
+  <input formControlName="email"
+         type="text"/>
+</form>
+
+
+<form [formGroup]="ourform" (ngSubmit)="addClient()">
+  <button type="submit">Add</button>
+</form>
